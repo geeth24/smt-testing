@@ -12,6 +12,7 @@ import {
   where,
 } from "firebase/firestore";
 import { animateScroll as scroll } from "react-scroll";
+import Head from "next/head";
 
 export default function Home() {
   const [selected, setSelected] = useState(people[1]);
@@ -60,6 +61,9 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title key="title">Testing | Smart Math Tutoring</title>
+      </Head>
       <div className="bg-slate-900 font-Inter">
         <Hero
           selected={selected}
