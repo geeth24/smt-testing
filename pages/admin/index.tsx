@@ -1,4 +1,3 @@
-
 import { Fragment, useEffect, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
@@ -21,6 +20,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../Firebase";
 import NewSlotModal from "../../components/dashboard/NewSlotModal";
+import Link from "next/link";
 
 const navigation = [{ name: "Home", href: "#", icon: HomeIcon, current: true }];
 const teams = [
@@ -152,7 +152,7 @@ export default function Admin() {
                     <nav className="px-2">
                       <div className="space-y-1">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             key={item.name}
                             href={item.href}
                             className={classNames(
@@ -173,7 +173,7 @@ export default function Admin() {
                               aria-hidden="true"
                             />
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                       <div className="mt-8">
@@ -189,7 +189,7 @@ export default function Admin() {
                           aria-labelledby="mobile-teams-headline"
                         >
                           {teams.map((team) => (
-                            <a
+                            <Link
                               key={team.name}
                               href={team.href}
                               className="group flex items-center rounded-md px-3 py-2 text-base font-medium leading-5 text-slate-600 hover:bg-slate-400 hover:text-slate-900"
@@ -202,7 +202,7 @@ export default function Admin() {
                                 aria-hidden="true"
                               />
                               <span className="truncate">{team.name}</span>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -220,13 +220,13 @@ export default function Admin() {
         {/* Static sidebar for desktop */}
         <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col lg:border-r lg:border-slate-600 bg-slate-800 lg:pt-5 lg:pb-4">
           <div className="flex flex-shrink-0 items-center px-6">
-            <a href="/">
+            <Link href="/">
               <img
                 className="h-10 w-auto"
                 src="/smtlogo.png"
                 alt="Your Company"
               />
-            </a>
+            </Link>
           </div>
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="mt-5 flex h-0 flex-1 flex-col overflow-y-auto pt-1">
@@ -269,7 +269,7 @@ export default function Admin() {
                 <Menu.Items className="absolute right-0 left-0 z-10 mx-3 mt-1 origin-top divide-y divide-slate-200 rounded-md focus:rounded-md bg-slate-400 shadow-lg ring-1 ring-black ring-opacity-5">
                   <Menu.Item>
                     {({ active }) => (
-                      <a
+                      <Link
                         href="#"
                         className={classNames(
                           active
@@ -279,7 +279,7 @@ export default function Admin() {
                         )}
                       >
                         Logout
-                      </a>
+                      </Link>
                     )}
                   </Menu.Item>
                 </Menu.Items>
@@ -313,7 +313,7 @@ export default function Admin() {
             <nav className="mt-6 px-3">
               <div className="space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className={classNames(
@@ -334,7 +334,7 @@ export default function Admin() {
                       aria-hidden="true"
                     />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="mt-8">
@@ -351,7 +351,7 @@ export default function Admin() {
                   aria-labelledby="desktop-teams-headline"
                 >
                   {teams.map((team) => (
-                    <a
+                    <Link
                       key={team.name}
                       href={team.href}
                       className="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-400 hover:text-slate-900"
@@ -364,7 +364,7 @@ export default function Admin() {
                         aria-hidden="true"
                       />
                       <span className="truncate">{team.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -431,7 +431,7 @@ export default function Admin() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right divide-y divide-slate-200 rounded-md bg-slate-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
+                          <Link
                             href="#"
                             className={classNames(
                               active
@@ -441,7 +441,7 @@ export default function Admin() {
                             )}
                           >
                             Logout
-                          </a>
+                          </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
@@ -493,7 +493,7 @@ export default function Admin() {
               >
                 {resultsArray.map((result: any) => (
                   <li key={result.id}>
-                    <a
+                    <Link
                       href="#"
                       className="group flex items-center justify-between px-4 py-4 bg-slate-800 hover:bg-slate-600 sm:px-6"
                     >
@@ -513,7 +513,7 @@ export default function Admin() {
                         className="ml-4 h-5 w-5 text-slate-400 group-hover:text-slate-500"
                         aria-hidden="true"
                       />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -564,7 +564,7 @@ export default function Admin() {
                               className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-orange-600"
                               aria-hidden="true"
                             />
-                            <a
+                            <Link
                               href="#"
                               className="truncate hover:text-slate-600 text-slate-50"
                             >
@@ -574,7 +574,7 @@ export default function Admin() {
                                   {result.location}
                                 </span>
                               </span>
-                            </a>
+                            </Link>
                           </div>
                         </td>
                         <td className="px-6 py-3 text-sm font-medium text-red-300">
@@ -601,12 +601,12 @@ export default function Admin() {
                           </td>
                         )}
                         <td className="whitespace-nowrap px-6 py-3 text-right text-sm font-medium">
-                          <a
+                          <Link
                             href="#"
                             className="text-red-300 hover:text-red-300"
                           >
                             Edit
-                          </a>
+                          </Link>
                         </td>
                       </tr>
                     ))}

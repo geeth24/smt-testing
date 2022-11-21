@@ -122,7 +122,8 @@ export default function NewSlotSignupModal({
                     className="mt-2 text-xs text-gray-300"
                     id="email-description"
                   >
-                    We'll only use this to send the meeting link or location.
+                    We&apos;ll only use this to send the meeting link or
+                    location.
                   </p>
                 </div>
 

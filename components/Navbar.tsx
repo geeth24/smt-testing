@@ -1,5 +1,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import React, { Fragment } from "react";
 const navigation = [
   { name: "Home", href: "/" },
@@ -18,7 +19,7 @@ function Navbar() {
         >
           <div className="flex flex-1 items-center">
             <div className="flex w-full items-center justify-between md:w-auto">
-              <a href="/">
+              <Link href="/">
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="sr-only">Smart Math Tutoring</span>
@@ -33,7 +34,7 @@ function Navbar() {
                     Testing
                   </h1>
                 </div>
-              </a>
+              </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -43,23 +44,23 @@ function Navbar() {
             </div>
             <div className="hidden space-x-8 md:ml-10 md:flex">
               {navigation.map((item) => (
-                <a
+                <Link
                   key={item.name}
                   href={item.href}
                   className="text-base font-medium text-white hover:text-slate-300"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-6">
-            <a
+            <Link
               href="/admin/signin"
               className="inline-flex items-center rounded-md border border-transparent bg-slate-600 px-4 py-2 text-base font-medium text-white hover:bg-slate-700"
             >
               Admin Login
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
@@ -103,22 +104,22 @@ function Navbar() {
             <div className="pt-5 pb-6">
               <div className="space-y-1 px-2">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="block rounded-md px-3 py-2 text-base font-medium text-slate-900 hover:bg-slate-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="mt-6 px-5">
-                <a
+                <Link
                   href="/admin/signin"
                   className="block w-full rounded-md bg-red-600 py-3 px-4 text-center font-medium text-white shadow hover:bg-red-700"
                 >
                   Admin Login
-                </a>
+                </Link>
               </div>
             </div>
           </div>
